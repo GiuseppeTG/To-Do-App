@@ -32,7 +32,7 @@ function App() {
     const description = descriptionRef.current.value;
     if (description === '') return
     setTodos([...prevTodos, {id: uuidv4(), description: description, completed: false}])
-    descriptionRef.innerText = '';
+    descriptionRef.current.value = '';
   }
   
   function handleClearTodo() {
