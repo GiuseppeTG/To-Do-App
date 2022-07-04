@@ -2,6 +2,7 @@
 
 input, button {
   font-family: $poppins;
+  color: rgba(0, 0, 0, 0.637);
   border: none;
   outline: none;
 }
@@ -62,7 +63,7 @@ ul {
   border-radius: 0 1rem 1rem 0;
   background: linear-gradient(to right, rgba(255, 255, 255, 0.274), rgba(255, 255, 255, 0.527));
   cursor: pointer;
-  font-weight: 200;
+  font-weight: 500;
 }
 
 .todo-list {
@@ -109,6 +110,25 @@ ul {
   background: linear-gradient(rgba(255, 255, 255, 0.178), rgba(255, 255, 255, 0.238));
   box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.116);
   cursor: pointer;
+  color: rgba(0, 0, 0, 0.637);
+}
+
+.completed-todo {
+  text-decoration: line-through 1px rgb(176, 176, 176);
+  color: rgb(176, 176, 176);
+}
+.completed-todo::placeholder {
+  text-decoration: line-through 1px rgb(176, 176, 176);
+  color: rgb(176, 176, 176);
+}
+
+.edit-mode-on {
+  background-color: rgba(0, 186, 0, 0.386);
+  animation: hey 1s;
+}
+
+@keyframes hey {
+  50% {transform: translate(2px, 2px);}
 }
 
 .left-todos {

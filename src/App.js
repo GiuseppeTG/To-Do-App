@@ -49,12 +49,21 @@ function App() {
     setTodos(notCompletedTodos)
   }
 
-  function editTodo(id, editText) {
-    if (editText === '') return
+  function editTodo(id, editText, todo) {
+    editText = editText.trim().charAt(0).toUpperCase() + editText.slice(1);
     const newTodos = [...todos]
     const editedTodo = newTodos.find(todo => todo.id === id)
     editedTodo.description = editText
+    todo.editMode = true;
     setTodos(newTodos) 
+    console.log(todos)
+  }
+
+  function quitEditMode(id) {
+    const newTodos = [...todos]
+    const editedTodo = newTodos.find(todo => todo.id === id)
+    editedTodo.editMode = false;
+    setTodos(newTodos)
   }
 
   return (
@@ -69,6 +78,7 @@ function App() {
       todos={todos}
       toggleTodo={toggleTodo}
       editTodo={editTodo}
+      editMode={quitEditMode}
       deleteOneTodo={deleteOneTodo} />
       <button type="button" className="clear-button" onClick={handleClearTodo}>CLEAR ALL COMPLETED</button>
       <p className="left-todos">{todos.filter(todo => todo.completed === false).length} to do left</p>
