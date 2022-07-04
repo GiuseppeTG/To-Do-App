@@ -4,6 +4,10 @@ import { useState, useRef, useEffect } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import './scss/App.scss';
 
+import { IoMdAdd } from "react-icons/io";
+import { VscDebugRestart } from "react-icons/vsc";
+
+
 
 
 function App() {
@@ -72,8 +76,9 @@ function App() {
     <div className="app-container">
       <form className="add-container" action="#">
         <input ref={descriptionRef} type="text" placeholder="Add a task..." className="add-input" />
-        <button type="submit" className="add-button" onClick={handleAddTodo}>ADD</button>
-      </form>      
+        <button type="submit" className="add-button" onClick={handleAddTodo}><IoMdAdd /></button>
+      </form>
+      <div className="restart"><VscDebugRestart /></div>      
       <TodoList
       todos={todos}
       toggleTodo={toggleTodo}

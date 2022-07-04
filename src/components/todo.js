@@ -1,5 +1,6 @@
 import React from 'react'
 import { useRef } from 'react'
+import { TbTrash } from "react-icons/tb"
 
 export default function Todo({ todo, toggleTodo, editTodo, deleteOneTodo, editMode }) {
   const todoContainer = useRef()
@@ -44,7 +45,7 @@ export default function Todo({ todo, toggleTodo, editTodo, deleteOneTodo, editMo
       className='delete-button'
       onClick={handleDeleteOneTodo}
       >
-      DEL
+      <TbTrash />
       </button>   
 
     </li>
