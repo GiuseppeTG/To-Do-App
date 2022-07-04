@@ -2,6 +2,8 @@ import React from "react";
 import TodoList from "./components/todoList";
 import { useState, useRef, useEffect } from "react";
 import { v4 as uuidv4 } from 'uuid';
+import './scss/App.scss';
+
 
 
 function App() {
@@ -34,6 +36,7 @@ function App() {
   
   function handleAddTodo() {
     const prevTodos = todos;
+    //remove spaces, capitalize first letter, don't allow empti string.
     let description = descriptionRef.current.value.trim();
     description = description.charAt(0).toUpperCase() + description.slice(1);
     if (description === '') return
