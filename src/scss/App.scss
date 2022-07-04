@@ -8,7 +8,7 @@ $poppins: 'Poppins', sans-serif;
   box-sizing: border-box;
 }
 
-body {
+body { 
   background: linear-gradient(to top right, rgb(85, 196, 236), rgb(0, 255, 166), rgb(169, 104, 253));
   font-family: $poppins;
 }
@@ -143,7 +143,14 @@ ul {
 }
 
 .todo-text {
+  border: red solid 1px ;
   background-color: transparent;
+  width: 100%;
+}
+
+.delete-button {
+  background-color: rgba(255, 99, 99, 0.849);
+  cursor: pointer;
 }
 
 .clear-button {
@@ -155,6 +162,7 @@ ul {
   margin: auto;
   background: linear-gradient(rgba(255, 255, 255, 0.178), rgba(255, 255, 255, 0.238));
   box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.116);
+  cursor: pointer;
 }
 
 .left-todos {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRef } from 'react'
 
-export default function Todo({ todo, toggleTodo, editTodo }) {
+export default function Todo({ todo, toggleTodo, editTodo, deleteOneTodo }) {
 
   const editDescription = useRef()
 
@@ -13,13 +13,15 @@ export default function Todo({ todo, toggleTodo, editTodo }) {
     editTodo(todo.id, editDescription.current.value)
   }
 
+  function handleDeleteOneTodo() {
+    deleteOneTodo(todo.id)
+  }
+
   return (
     <li className='todo'>
       <input className='checkbox' type="checkbox" checked={todo.completed} onChange={handleCheckTodo} />
-      <form action="#">
-        <input className='description todo-text' ref={editDescription} type="text" placeholder={todo.description} onSubmit={handleEditTodo} onChange={handleEditTodo}/>
-      </form>
-      
+      <input className='description todo-text' ref={editDescription} type="text" placeholder={todo.description} onSubmit={handleEditTodo} onChange={handleEditTodo}/>  
+      <button type='button' className='delete-button'onClick={handleDeleteOneTodo}>DEL</button>   
     </li>
   )
 }

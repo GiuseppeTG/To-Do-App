@@ -7,7 +7,6 @@ import { v4 as uuidv4 } from 'uuid';
 function App() {
   const [todos, setTodos] = useState([]);
   const descriptionRef = useRef();
-  console.log(todos)
 
   //Get todos from local storage
   useEffect(() => {
@@ -26,10 +25,17 @@ function App() {
     checkTodo.completed = !checkTodo.completed
     setTodos(newTodos)
   }
+
+  function deleteOneTodo(id) {
+    let newTodos = [...todos]
+    newTodos = newTodos.filter(todo => todo.id !== id)
+    setTodos(newTodos)
+  }
   
   function handleAddTodo() {
     const prevTodos = todos;
-    const description = descriptionRef.current.value;
+    let description = descriptionRef.current.value.trim();
+    description = description.charAt(0).toUpperCase() + description.slice(1);
     if (description === '') return
     setTodos([...prevTodos, {id: uuidv4(), description: description, completed: false}])
     descriptionRef.current.value = '';
@@ -56,7 +62,11 @@ function App() {
         <input ref={descriptionRef} type="text" placeholder="Add a task..." className="add-input" />
         <button type="submit" className="add-button" onClick={handleAddTodo}>ADD</button>
       </form>      
-      <TodoList todos={todos} toggleTodo={toggleTodo} editTodo={editTodo}/>
+      <TodoList
+      todos={todos}
+      toggleTodo={toggleTodo}
+      editTodo={editTodo}
+      deleteOneTodo={deleteOneTodo} />
       <button type="button" className="clear-button" onClick={handleClearTodo}>CLEAR ALL COMPLETED</button>
       <p className="left-todos">{todos.filter(todo => todo.completed === false).length} to do left</p>
     </div>
