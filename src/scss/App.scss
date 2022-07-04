@@ -1,4 +1,10 @@
-@import './background.scss';
+@import './Background.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 input, button {
   font-family: $poppins;
@@ -22,8 +28,8 @@ ul {
   margin-top: 5rem;
   font-size: 80px;
   font-weight: 800;
-  color: rgba(255, 255, 255, 0.459);
-  text-shadow:  0  0px 8px rgba(255, 255, 255, 0.76);
+  color: rgb(249, 232, 232);
+  text-shadow:  0  0px 8px rgba(240, 233, 233, 0.461);
 }
 
 .app-container {

@@ -2,10 +2,9 @@ import React from "react";
 import TodoList from "./components/todoList";
 import { useState, useRef, useEffect } from "react";
 import { v4 as uuidv4 } from 'uuid';
-import './scss/App.scss';
-
 import { IoMdAdd } from "react-icons/io";
 import { VscDebugRestart } from "react-icons/vsc";
+import { Route, Routes, Switch } from "react-router-dom";
 
 
 
@@ -71,25 +70,24 @@ function App() {
   }
 
   return (
-    <>
-    <h1 className="title">TO DO LIST</h1> 
-    <div className="app-container">
-      <form className="add-container" action="#">
-        <input ref={descriptionRef} type="text" placeholder="Add a task..." className="add-input" />
-        <button type="submit" className="add-button" onClick={handleAddTodo}><IoMdAdd /></button>
-      </form>
-      <div className="restart"><VscDebugRestart /></div>      
-      <TodoList
-      todos={todos}
-      toggleTodo={toggleTodo}
-      editTodo={editTodo}
-      editMode={quitEditMode}
-      deleteOneTodo={deleteOneTodo} />
-      <button type="button" className="clear-button" onClick={handleClearTodo}>CLEAR ALL COMPLETED</button>
-      <p className="left-todos">{todos.filter(todo => todo.completed === false).length} to do left</p>
-    </div>
-    
-    </>
+        <React.Fragment>
+          <h1 className="title">TO DO LIST</h1> 
+          <div className="app-container">
+            <form className="add-container" action="#">
+              <input ref={descriptionRef} type="text" placeholder="Add a task..." className="add-input" />
+              <button type="submit" className="add-button" onClick={handleAddTodo}><IoMdAdd /></button>
+            </form>
+            <div className="restart"><VscDebugRestart /></div>      
+            <TodoList
+            todos={todos}
+            toggleTodo={toggleTodo}
+            editTodo={editTodo}
+            editMode={quitEditMode}
+            deleteOneTodo={deleteOneTodo} />
+            <button type="button" className="clear-button" onClick={handleClearTodo}>CLEAR ALL COMPLETED</button>
+            <p className="left-todos">{todos.filter(todo => todo.completed === false).length} to do left</p>
+          </div>      
+        </React.Fragment>   
   );
 }
 
