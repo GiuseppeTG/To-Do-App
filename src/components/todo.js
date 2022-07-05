@@ -1,24 +1,23 @@
-import React from 'react'
-import { useRef } from 'react'
-import { TbTrash } from "react-icons/tb"
+import React, { useRef } from 'react'
+import { TbTrash } from 'react-icons/tb'
 
-export default function Todo({ todo, toggleTodo, editTodo, deleteOneTodo, editMode }) {
+export default function Todo ({ todo, toggleTodo, editTodo, deleteOneTodo, editMode }) {
   const todoContainer = useRef()
   const editDescription = useRef()
 
-  function handleCheckTodo() {
+  function handleCheckTodo () {
     toggleTodo(todo.id)
   }
 
-  function handleEditTodo() {
+  function handleEditTodo () {
     editTodo(todo.id, editDescription.current.value, todo)
   }
 
-  function handleDeleteOneTodo() {
+  function handleDeleteOneTodo () {
     deleteOneTodo(todo.id, todoContainer)
   }
 
-  function handleQuitEdit() {
+  function handleQuitEdit () {
     editMode(todo.id)
   }
 
@@ -38,17 +37,16 @@ export default function Todo({ todo, toggleTodo, editTodo, deleteOneTodo, editMo
       placeholder={todo.description}
       value={todo.description}
       onBlur={handleQuitEdit}
-      onFocus={handleEditTodo} 
-      onChange={handleEditTodo}/> 
+      onFocus={handleEditTodo}
+      onChange={handleEditTodo}/>
       <button
       type='button'
       className='delete-button'
       onClick={handleDeleteOneTodo}
       >
       <TbTrash />
-      </button>   
+      </button>
 
     </li>
   )
 }
- 
