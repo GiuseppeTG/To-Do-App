@@ -10,7 +10,7 @@ import Background from './components/Background';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-      <Background />
+      <Background />    
       <Navbar />
       <App />   
   </>  
