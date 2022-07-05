@@ -6,20 +6,17 @@ import { IoMdAdd } from "react-icons/io";
 import { VscDebugRestart } from "react-icons/vsc";
 import { Route, Routes, Switch } from "react-router-dom";
 
-
-
-
 function App() {
   const [todos, setTodos] = useState([]);
   const descriptionRef = useRef();
 
-  //Get todos from local storage
+  // Get todos from local storage
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem('todos'))
     if (storedTodos) setTodos(storedTodos)
   }, [])
   
-  //Store todos in local storage
+  // Store todos in local storage
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos))
   }, [todos])
@@ -39,7 +36,7 @@ function App() {
   
   function handleAddTodo() {
     const prevTodos = todos;
-    //remove spaces, capitalize first letter, don't allow empti string.
+    // remove spaces, capitalize first letter, don't allow empti string.
     let description = descriptionRef.current.value.trim();
     description = description.charAt(0).toUpperCase() + description.slice(1);
     if (description === '') return
