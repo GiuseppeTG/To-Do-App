@@ -1,8 +1,9 @@
 import React from 'react'
 import { useRef } from 'react'
+import { TbTrash } from "react-icons/tb"
 
-export default function Todo({ todo, toggleTodo, editTodo }) {
-
+export default function Todo({ todo, toggleTodo, editTodo, deleteOneTodo, editMode }) {
+  const todoContainer = useRef()
   const editDescription = useRef()
 
   function handleCheckTodo() {
@@ -10,16 +11,43 @@ export default function Todo({ todo, toggleTodo, editTodo }) {
   }
 
   function handleEditTodo() {
-    editTodo(todo.id, editDescription.current.value)
+    editTodo(todo.id, editDescription.current.value, todo)
+  }
+
+  function handleDeleteOneTodo() {
+    deleteOneTodo(todo.id, todoContainer)
+  }
+
+  function handleQuitEdit() {
+    editMode(todo.id)
   }
 
   return (
-    <li className='todo'>
-      <input className='checkbox' type="checkbox" checked={todo.completed} onChange={handleCheckTodo} />
-      <form action="#">
-        <input className='description todo-text' ref={editDescription} type="text" placeholder={todo.description} onSubmit={handleEditTodo} onChange={handleEditTodo}/>
-      </form>
-      
+    <li className={`todo ${todo.editMode ? 'edit-mode-on' : null}`} ref={todoContainer} >
+
+      <input
+      className='checkbox'
+      type="checkbox"
+      checked={todo.completed}
+      onChange={handleCheckTodo} />
+
+      <input
+      className={`description todo-text ${todo.completed ? 'completed-todo' : null}`}
+      type="text"
+      ref={editDescription}
+      placeholder={todo.description}
+      value={todo.description}
+      onBlur={handleQuitEdit}
+      onFocus={handleEditTodo} 
+      onChange={handleEditTodo}/> 
+      <button
+      type='button'
+      className='delete-button'
+      onClick={handleDeleteOneTodo}
+      >
+      <TbTrash />
+      </button>   
+
     </li>
   )
 }

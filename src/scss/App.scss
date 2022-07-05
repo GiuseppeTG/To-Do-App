@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-$poppins: 'Poppins', sans-serif;
+@import './Background.scss';
 
 * {
   margin: 0;
@@ -8,20 +6,16 @@ $poppins: 'Poppins', sans-serif;
   box-sizing: border-box;
 }
 
-body {
-  background: linear-gradient(to top right, rgb(85, 196, 236), rgb(0, 255, 166), rgb(169, 104, 253));
-  font-family: $poppins;
-}
-
 input, button {
   font-family: $poppins;
+  color: rgba(0, 0, 0, 0.637);
   border: none;
   outline: none;
 }
 
 input, input::placeholder {
   font-weight: 300;
-  color: rgb(0, 0, 0);
+  color: rgba(0, 0, 0, 0.9);
 }
 
 ul {
@@ -34,9 +28,8 @@ ul {
   margin-top: 5rem;
   font-size: 80px;
   font-weight: 800;
-  color: rgba(255, 255, 255, 0.459);
-  text-shadow:  0  0px 8px rgba(255, 255, 255, 0.76);
-  
+  color: rgb(249, 232, 232);
+  text-shadow:  0  0px 8px rgba(240, 233, 233, 0.461);
 }
 
 .app-container {
@@ -51,71 +44,52 @@ ul {
   background: linear-gradient(rgba(255, 255, 255, 0.152), rgba(255, 255, 255, 0.062), rgba(255, 255, 255, 0.192));
   backdrop-filter: blur(5px);
   box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.178);
-
-}
-
-.circle {
-  width: 100px;
-  height: 100px;
-  background: linear-gradient(to top right, rgba(255, 255, 255, 0.692), rgba(255, 255, 255, 0.384));
-  border-radius: 50%;
-  position: absolute;
-  box-shadow: 0px 0px 16px 0px rgb(254, 254, 254);
-
-}
-
-.circle1 {
-  top: 80%;
-  left: 30%;
-}
-
-.circle2 {
-  top: 20%;
-  left: 30%;
-}
-
-.circle3 {
-  top: 60%;
-  left: 70%;
-}
-
-.circle4 {
-  top: 50%;
-  left: 20%;
-}
-
-.circle5 {
-  top: 30%;
-  left: 90%;
-}
-
-.circle6 {
-  top: 40%;
-  left: 40%;
 }
 
 .add-container {
+  display: flex;
   width: 100%;
   box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.178);
   border-radius: 1rem;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.315), rgba(255, 255, 255, 0.22));
+  justify-content: space-between;
+  padding: 0 1rem;
 }
 
 .add-input {
-  width: 80%;
   height: 2.5rem;
   border-radius: 1rem 0 0 1rem;
-  padding-left: 1rem;
-  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.315), rgba(255, 255, 255, 0.22));
   outline: none;
+  background-color: transparent;
 }
 
 .add-button {
-  width: 20%;
-  height: 2.5rem;
-  border-radius: 0 1rem 1rem 0;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.274), rgba(255, 255, 255, 0.527));
+  align-items: center;
+  display: flex;
+  background-color: transparent;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
   cursor: pointer;
-  font-weight: 200;
+  transition: 0.5s;
+}
+
+.add-button:hover {
+  transform: scale(1.5);
+}
+
+.restart {
+  display: flex;
+  position: absolute;
+  top: 1.3rem;
+  right: 1.3rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.restart:hover {
+  transform: rotate(-360deg);
 }
 
 .todo-list {
@@ -144,6 +118,21 @@ ul {
 
 .todo-text {
   background-color: transparent;
+  width: 100%;
+}
+
+.delete-button {
+  display: flex;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.626);
+  background-color: transparent;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+
+.delete-button:hover {
+  animation: shake 0.5s;
+  color: rgb(255, 54, 54);
 }
 
 .clear-button {
@@ -155,9 +144,43 @@ ul {
   margin: auto;
   background: linear-gradient(rgba(255, 255, 255, 0.178), rgba(255, 255, 255, 0.238));
   box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.116);
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.637);
+  outline: white;
+  transition: 0.2s linear;
+}
+
+.clear-button:hover {
+  outline: white solid 1px;
+  outline-offset: 4px;
+}
+
+.completed-todo {
+  text-decoration: line-through 1px rgb(176, 176, 176);
+  color: rgb(176, 176, 176);
+}
+.completed-todo::placeholder {
+  text-decoration: line-through 1px rgb(176, 176, 176);
+  color: rgb(176, 176, 176);
+}
+
+.edit-mode-on {
+  background-color: rgba(0, 186, 0, 0.386);
+  animation: hey 0.75s;
 }
 
 .left-todos {
   margin-top: 2rem;
-  color: rgba(45, 45, 45, 0.813);
+  color: rgba(255, 255, 255, 0.623);
+}
+
+@keyframes shake {
+  20% {transform: rotate(15deg);}
+  40% {transform: rotate(-15deg);}
+  60% {transform: rotate(15deg);}
+  80% {transform: rotate(-15deg);}
+}
+
+@keyframes hey {
+  50% {transform: translate(2px, 2px) scale(1.02);}
 }

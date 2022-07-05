@@ -1,18 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import './scss/App.scss';
+import './scss/index.scss';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Navbar from './components/Navbar';
+import About from './components/About';
+import Background from './components/Background';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-  <div className='circle circle1'></div>
-  <div className='circle circle2'></div>
-  <div className='circle circle3'></div>
-  <div className='circle circle4'></div>
-  <div className='circle circle5'></div>
-  <div className='circle circle6'></div>
-  <App />
-  </>
+      <Background />
+      <Navbar />
+      <App />   
+  </>  
   
 );
