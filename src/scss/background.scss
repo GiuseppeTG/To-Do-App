@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-$poppins: 'Poppins', sans-serif;
+$poppins: "Poppins", sans-serif;
 
 * {
   margin: 0;
@@ -8,19 +8,19 @@ $poppins: 'Poppins', sans-serif;
   box-sizing: border-box;
 }
 
-body { 
-  background: linear-gradient(90deg, rgba(136,69,181,1) 7%, rgba(232,95,95,1) 51%, rgba(255,206,137,1) 96%);
+body {
+  background: linear-gradient(90deg, rgb(136 69 181 / 100%) 7%, rgb(232 95 95 / 100%) 51%, rgb(255 206 137 / 100%) 96%);
   font-family: $poppins;
-  color: rgba(0, 0, 0, 0.753);
+  color: rgb(0 0 0 / 75.3%);
 }
 
 .circle {
   width: 100px;
   height: 100px;
-  background: rgba(255, 255, 255, 0.653);
+  background: rgb(255 255 255 / 65.3%);
   border-radius: 50%;
   position: absolute;
-  box-shadow: 0px 0px 10px 0px rgba(254, 254, 254, 0.667);
+  box-shadow: 0 0 10px 0 rgb(254 254 254 / 66.7%);
 }
 
 .circle1 {

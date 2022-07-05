@@ -1,16 +1,15 @@
-@import './Background.scss';
+@import "./Background";
 
 nav {
   width: 100%;
   display: flex;
-  background: linear-gradient(rgba(255, 255, 255, 0.29), rgba(255, 255, 255, 0.441));
-  border: solid rgba(255, 255, 255, 0.304) 1px;
+  background: linear-gradient(rgb(255 255 255 / 29%), rgb(255 255 255 / 44.1%));
+  border: solid rgb(255 255 255 / 30.4%) 1px;
   justify-content: center;
   align-items: center;
   gap: 2rem;
   padding: 1rem;
 }
-
 
 nav ul {
   display: flex;
@@ -26,19 +25,18 @@ nav ul li {
   height: 2rem;
   padding: 0 1rem;
   border-radius: 1rem;
-  box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.178);
+  box-shadow: 4px 4px 10px 2px rgb(0 0 0 / 17.8%);
   transition: 0.3s;
 }
 
 nav ul li:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 10px 4px rgba(0, 0, 0, 0.178);
-
+  box-shadow: 6px 6px 10px 4px rgb(0 0 0 / 17.8%);
 }
 
 .logo {
   display: flex;
   align-items: center;
   font-size: 3rem;
-  color: rgba(255, 255, 255, 0.63);
+  color: rgb(255 255 255 / 63%);
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import Todo from './todo'
+import PropTypes from 'prop-types'
 
 export default function TodoList ({ todos, toggleTodo, editTodo, deleteOneTodo, editMode }) {
   return (
@@ -15,4 +16,12 @@ export default function TodoList ({ todos, toggleTodo, editTodo, deleteOneTodo, 
       })}
     </ul>
   )
+}
+
+TodoList.propTypes = {
+  todos: PropTypes.array,
+  toggleTodo: PropTypes.func,
+  editTodo: PropTypes.func,
+  deleteOneTodo: PropTypes.func,
+  editMode: PropTypes.func
 }

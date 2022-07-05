@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import { TbTrash } from 'react-icons/tb'
+import PropTypes from 'prop-types'
 
 export default function Todo ({ todo, toggleTodo, editTodo, deleteOneTodo, editMode }) {
   const todoContainer = useRef()
@@ -49,4 +50,12 @@ export default function Todo ({ todo, toggleTodo, editTodo, deleteOneTodo, editM
 
     </li>
   )
+}
+
+Todo.propTypes = {
+  todo: PropTypes.object,
+  toggleTodo: PropTypes.func,
+  editTodo: PropTypes.func,
+  deleteOneTodo: PropTypes.func,
+  editMode: PropTypes.func
 }
