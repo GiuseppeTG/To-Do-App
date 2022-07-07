@@ -1,2 +1,2 @@
 # React-tutorial
-Exercises using React
+Exercise using React

@@ -28,8 +28,8 @@ ul {
   margin-top: 5rem;
   font-size: 80px;
   font-weight: 800;
-  color: rgb(249, 232, 232);
-  text-shadow:  0  0px 8px rgba(240, 233, 233, 0.461);
+  color: rgb(175, 243, 231);
+  text-shadow:  0  0px 8px rgb(240, 233, 233);
 }
 
 .app-container {
@@ -171,7 +171,7 @@ ul {
 
 .left-todos {
   margin-top: 2rem;
-  color: rgba(255, 255, 255, 0.623);
+  color: rgba(255, 255, 255, 0.737);
 }
 
 @keyframes shake {
