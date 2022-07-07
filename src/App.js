@@ -4,7 +4,6 @@ import { useState, useRef, useEffect } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import { IoMdAdd } from "react-icons/io";
 import { VscDebugRestart } from "react-icons/vsc";
-import { Route, Routes, Switch } from "react-router-dom";
 
 function App() {
   const [todos, setTodos] = useState([]);
