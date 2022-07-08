@@ -2,7 +2,7 @@
 
 > Interactive to do list built with react
 
-![App screenshot](./src/images/screenshot.png)
+![App screenshot](./src/image/screenshot.png)
 
 ## Built With
 
