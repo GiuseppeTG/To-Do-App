@@ -8,7 +8,6 @@ export default function Background() {
       <div className='circle circle3'></div>
       <div className='circle circle4'></div>
       <div className='circle circle5'></div>
-      <div className='circle circle6'></div>
     </>
   )
 }

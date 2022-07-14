@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 $poppins: 'Poppins', sans-serif;
+$randomNumber: random(30);
 
 * {
   margin: 0;
@@ -9,7 +10,7 @@ $poppins: 'Poppins', sans-serif;
 }
 
 body { 
-  background: linear-gradient(90deg, rgba(136,69,181,1) 7%, rgba(232,95,95,1) 51%, rgba(255,206,137,1) 96%);
+  background: linear-gradient(90deg, rgba(2, 8, 19, 0.998) 7%, rgb(26, 54, 46) 51%, rgb(7, 59, 70) 96%);
   font-family: $poppins;
   color: rgba(0, 0, 0, 0.753);
 }
@@ -23,32 +24,51 @@ body {
   box-shadow: 0px 0px 10px 0px rgba(254, 254, 254, 0.667);
 }
 
+@keyframes move {
+  0% {
+    transform: translateX(0px) translateY(0px);
+  }
+  25% {
+    transform: translateX(15px) translateY(12px);
+  }
+  50% {
+    transform: translateX(5px) translateY(18px);
+  }
+  75% {
+    transform: translateX(10px) translateY(15px);
+  }
+  100% {
+    transform: translateX(0px) translateY(0px);
+  }
+  
+}
+
 .circle1 {
   top: 80%;
   left: 30%;
+  animation: move 10s infinite linear;
 }
 
 .circle2 {
   top: 10%;
   left: 10%;
+  animation: move 7s infinite linear;
 }
 
 .circle3 {
   top: 60%;
   left: 70%;
+  animation: move 12s infinite linear;
 }
 
 .circle4 {
   top: 50%;
   left: 20%;
+  animation: move 11s infinite linear;
 }
 
 .circle5 {
-  top: 80%;
-  left: 90%;
-}
-
-.circle6 {
   top: 40%;
   left: 40%;
+  animation: move 9.51s infinite linear;
 }

@@ -157,15 +157,15 @@ ul {
 
 .completed-todo {
   text-decoration: line-through 1px rgb(176, 176, 176);
-  color: rgb(176, 176, 176);
+  color: rgb(171, 59, 59);
 }
 .completed-todo::placeholder {
   text-decoration: line-through 1px rgb(176, 176, 176);
-  color: rgb(176, 176, 176);
+  color: rgb(171, 59, 59);
 }
 
 .edit-mode-on {
-  background-color: rgba(0, 186, 0, 0.386);
+  background-color: rgba(81, 186, 0, 0.386);
   animation: hey 0.75s;
 }
 
